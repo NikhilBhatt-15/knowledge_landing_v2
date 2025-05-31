@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <Image
-                src="/logo.png"
+                src="/secondaryLogo.png"
                 alt="Know[ledge] Logo"
                 className="h-8 w-8"
                 width={32}

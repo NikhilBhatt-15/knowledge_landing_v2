@@ -23,7 +23,7 @@ export const Navbar = () => {
             transition={{ duration: 0.2 }}
           >
             <motion.img
-              src="/logo.png"
+              src="/secondaryLogo.png"
               alt="know[ledge] Logo"
               className="h-10 w-auto"
               whileHover={{ rotate: [0, -5, 5, 0] }}
@@ -65,7 +65,17 @@ export const Navbar = () => {
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <button className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-semibold border-0 rounded-full px-6 py-2 relative overflow-hidden group transition-all duration-300">
+              <button
+                className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-semibold border-0 rounded-full px-6 py-2 relative overflow-hidden group transition-all duration-300"
+                onClick={() => {
+                  // open download link
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=com.knowhistory_knowledge.app",
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
+              >
                 <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-150 transition-transform duration-400" />
                 <span className="relative z-10">Download</span>
               </button>
