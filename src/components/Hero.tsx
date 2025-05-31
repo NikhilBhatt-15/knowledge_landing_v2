@@ -1,8 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowDown, Apple } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
-import Image from "next/image";
 
 export const Hero = () => {
   return (
@@ -43,7 +42,7 @@ export const Hero = () => {
             >
               Uncover Histories They{" "}
               <span className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] bg-clip-text text-transparent">
-                Didn't Teach You
+                Didn&apos;t Teach You
               </span>
             </motion.h1>
 

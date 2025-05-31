@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Inter, Poppins } from "next/font/google";
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["700"],
-  variable: "--font-poppins",
-});
 import "./globals.css";
-import { Toast } from "@/components/Toast";
 import { Navbar } from "@/components/Navbar";
 // import Footer from "@/components/Footer";
 
@@ -57,7 +49,6 @@ export default function RootLayout({
         <Navbar />
         {children}
         {/* <Footer /> */}
-        <Toast />
       </body>
     </html>
   );
