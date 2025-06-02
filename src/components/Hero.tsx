@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { PhoneMockup } from "./PhoneMockup";
+// import { PhoneMockup } from "./PhoneMockup";
 import { useState, useEffect } from "react";
 import { PhoneMockupv2 } from "./PhoneMockupv2";
 const screens = [

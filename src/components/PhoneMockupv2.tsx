@@ -13,7 +13,6 @@ interface PhoneMockupProps {
 }
 
 export const PhoneMockupv2 = ({
-  className = "",
   scale = 1,
   rotate = 0,
   opacity = 1,
