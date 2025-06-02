@@ -22,7 +22,7 @@ export const PhoneMockupv2 = ({
   screenIndex,
 }: PhoneMockupProps) => (
   <motion.div
-    className={`relative aspect-[9/19.5] w-[180px]  h-[350px]  sm:w-[220px] sm:h-[450px] md:w-[260px] md:h-fu lg:w-[300px] lg:h-[650px]  mx-auto `}
+    className={`relative aspect-[9/19.5] w-[180px]  h-[380px]  sm:w-[220px] sm:h-[450px] md:w-[260px] md:h-fu lg:w-[300px] lg:h-[650px]  mx-auto `}
     style={{ zIndex }}
     initial={false}
     animate={{
@@ -33,10 +33,10 @@ export const PhoneMockupv2 = ({
     transition={{ duration: 0.3, ease: "easeOut" }}
   >
     {/* Phone frame */}
-    <div className="absolute inset-0 bg-gray-900 rounded-[3rem] shadow-2xl pointer-events-none" />
-    <div className="absolute inset-[6px] bg-white rounded-[2.75rem] overflow-hidden pointer-events-none">
-      <div className="relative w-full h-[350px] sm:h-[420px] md:h-full bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 rounded-[2.5rem] overflow-hidden">
-        {/* Persistent background color to avoid black flash */}
+    <div className="absolute inset-0 bg-gray-900 rounded-3xl sm:rounded-[3rem] shadow-2xl pointer-events-none" />
+    <div className="absolute inset-[6px] bg-white rounded-2xl sm:rounded-[2.75rem] overflow-hidden pointer-events-none">
+      <div className="relative w-full h-full sm:h-[420px] md:h-full bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 rounded-2xl sm:rounded-[2.5rem] overflow-hidden">
+        {/* Persistent background    color to avoid black flash */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-700 via-blue-900 to-purple-800" />
         {/* <div
           className="absolute inset-0 pointer-events-none"
@@ -49,9 +49,9 @@ export const PhoneMockupv2 = ({
         <AnimatePresence mode="wait">
           <motion.div
             key={iphoneScreens[screenIndex]}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="absolute inset-0"
             style={{ willChange: "opacity, transform" }}
@@ -61,7 +61,8 @@ export const PhoneMockupv2 = ({
               alt="know[ledge] app interface"
               fill
               sizes="100vw"
-              className="object-cover w-full h-full rounded-[2.5rem]"
+              //   className="object-cover w-full h-full rounded-[2.5rem]"
+              className="object-cover w-full h-full  sm:rounded-[2.5rem] rounded-2xl"
               priority
               draggable={false}
             />

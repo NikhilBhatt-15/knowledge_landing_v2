@@ -48,7 +48,12 @@ export const Hero = () => {
     }, 3000); // Change every 3 seconds
     return () => clearInterval(interval);
   }, []);
-
+  useEffect(() => {
+    screens.forEach((s) => {
+      const img = new window.Image();
+      img.src = s.image;
+    });
+  }, []);
   return (
     <section
       id="home"
