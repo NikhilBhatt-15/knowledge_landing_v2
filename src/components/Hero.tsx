@@ -2,8 +2,53 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
-
+import { useState, useEffect } from "react";
+import { PhoneMockupv2 } from "./PhoneMockupv2";
+const screens = [
+  {
+    title: "Welcome to know[ledge]",
+    image: "/screens/screen-1.jpg",
+    bg: "from-blue-500 to-purple-500",
+    content: "Discover a world of knowledge at your fingertips.",
+  },
+  {
+    title: "Explore Topics",
+    image: "/screens/screen-2.jpg",
+    bg: "from-purple-500 to-pink-500",
+    content: "Dive into a wide range of topics and expand your horizons.",
+  },
+  {
+    title: "Engage with Content",
+    image: "/screens/screen-3.jpg",
+    bg: "from-pink-500 to-red-500",
+    content: "Interact with articles, videos, and more.",
+  },
+  {
+    title: "Community Insights",
+    image: "/screens/screen-4.jpg",
+    bg: "from-orange-500 to-red-500",
+  },
+  {
+    title: "Interactive Stories",
+    image: "/screens/screen-5.jpg",
+    bg: "from-red-500 to-pink-500",
+  },
+  {
+    title: "Knowledge Hub",
+    image: "/screens/screen-6.jpg",
+    bg: "from-pink-500 to-purple-500",
+  },
+];
 export const Hero = () => {
+  const [screenIndex, setScreenIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setScreenIndex((prev) => (prev + 1) % screens.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
@@ -31,62 +76,47 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight tracking-tight"
+              className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              style={{
-                fontFamily:
-                  "var(--font-poppins), var(--font-inter), sans-serif",
-              }}
             >
-              Uncover Histories They{" "}
+              See the Stories That Were{" "}
               <span className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] bg-clip-text text-transparent">
-                Didn&apos;t Teach You
+                Left in the Margins
               </span>
             </motion.h1>
 
-            <motion.h2
-              className="text-lg md:text-2xl text-[#D4E333] mb-2 font-semibold tracking-wide uppercase"
-              initial={{ y: 20, opacity: 0 }}
+            <motion.div
+              className="text-xl md:text-2xl text-[#D4E333] mb-6 font-semibold"
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              style={{ letterSpacing: "0.1em" }}
             >
-              Question. Learn. Evolve.
+              Explore the overlooked, untold, and erased parts of history
+              through daily quests, interactive timelines, and gamified
+              challenges.
+            </motion.div>
+
+            <motion.h2
+              className="text-lg md:text-xl text-white mb-6 font-medium"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Learn something new and real every day.
             </motion.h2>
 
             <motion.p
-              className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto lg:mx-0"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              style={{ fontFamily: "var(--font-inter), sans-serif" }}
-            >
-              Know[ledge] is a revolutionary platform that reveals overlooked
-              histories of race, gender, sexual orientation, and ethnicity
-              through immersive storytelling and interactive learning.
-            </motion.p>
-
-            <motion.ul
-              className="mb-8 space-y-2 text-left max-w-md mx-auto lg:mx-0"
-              initial={{ y: 20, opacity: 0 }}
+              className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <li className="flex items-center text-gray-100 text-lg">
-                <span className="text-[#D4E333] mr-3 text-xl">✔️</span>
-                <span>Bite-sized stories that challenge the status quo</span>
-              </li>
-              <li className="flex items-center text-gray-100 text-lg">
-                <span className="text-[#D4E333] mr-3 text-xl">✔️</span>
-                <span>Gamified quizzes & interactive timelines</span>
-              </li>
-              <li className="flex items-center text-gray-100 text-lg">
-                <span className="text-[#D4E333] mr-3 text-xl">✔️</span>
-                <span>Personalized learning paths powered by AI</span>
-              </li>
-            </motion.ul>
+              Know[ledge] is the free, fun, and powerful way to explore history
+              through daily quests, gamified lessons, and interactive timelines
+              that reveal the moments and voices too often ignored.
+            </motion.p>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
@@ -160,7 +190,12 @@ export const Hero = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <PhoneMockup />
+            {/* <PhoneMockup /> */}
+            <PhoneMockupv2
+              iphoneScreens={screens.map((s) => s.image)}
+              screenIndex={screenIndex}
+              isMobile={false}
+            />
           </motion.div>
         </div>
 

@@ -62,7 +62,7 @@ export const PhoneMockup = () => {
         <div className="w-full h-full bg-white border-4 border-gray-900 rounded-[2.5rem] overflow-hidden relative">
           {" "}
           {/* Notch */}
-          {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black/90 rounded-b-2xl z-10"></div> */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black/90 rounded-b-2xl z-10"></div>
           {/* Screen Content */}
           <motion.div
             key={currentScreen}

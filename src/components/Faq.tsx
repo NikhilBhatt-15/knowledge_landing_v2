@@ -7,34 +7,44 @@ import {
 } from "@/components/ui/accordion";
 const faqs = [
   {
-    question: "What is Know History?",
+    question: "Why was Know[ledge] created?",
     answer:
-      "Know History is an interactive platform that brings historical events to life through immersive timelines, engaging stories, and multimedia content. We make learning history fun and accessible for everyone.",
+      "We created the platform to fill a critical gap in historical representation by making overlooked narratives accessible, engaging, and immersive. Traditional education, books, and media often omit or minimize key events and perspectives related to race, gender, sexuality, and culture. Our mission is to readjust or unearth these stories by providing a space where users can explore untold histories, gain deeper insights, and engage in meaningful discussions that connect the past to the present.",
   },
   {
-    question: "How accurate is the historical content?",
+    question: "What is Know[ledge]?",
     answer:
-      "All our content is carefully curated and verified by professional historians and subject matter experts. We maintain high academic standards while presenting information in an engaging format.",
+      "We bring overlooked history to life through immersive storytelling, expert insights, and collaborative learning. Our focus is on highlighting untold narratives about race, gender, sexuality, and culture—stories often missing from mainstream education.",
   },
   {
-    question: "Can I use Know History for educational purposes?",
+    question: "Who is Know[ledge] for?",
     answer:
-      "Absolutely! Know History is designed for learners of all ages. Teachers can use our platform in classrooms, and students can explore history at their own pace with our interactive tools and quizzes.",
+      "We’re designed for lifelong learners, educators, and socially conscious individuals who want to engage with history beyond textbooks. Whether you’re looking to explore new perspectives, contribute your own insights, or connect with a like-minded community, we provide an interactive space to deepen your understanding of historical events and their impact today.",
   },
   {
-    question: "Is the app available on mobile devices?",
+    question: "What makes Know[ledge] different?",
     answer:
-      "Yes, Know History is fully responsive and works seamlessly on all devices. We also have dedicated mobile apps for iOS and Android for the best experience on the go.",
+      "Unlike traditional history platforms, we prioritize narratives that have been suppressed or overlooked. By combining immersive storytelling with community engagement, we allow users to not only learn but also participate in discussions, share insights, and contribute to a collective understanding of history.",
   },
   {
-    question: "How often is new content added?",
+    question: "How does Know[ledge] work?",
     answer:
-      "We regularly update our platform with new historical discoveries, stories, and interactive content. Our team works continuously to expand our database and improve the user experience.",
+      "We integrate story-driven learning with collaborative features. Users can explore bite-sized historical narratives, engage in discussions with fellow seekers, access curated content on key historical events, and participate in knowledge-building challenges. Our platform is designed to be both interactive and informative, ensuring an engaging learning experience.",
   },
   {
-    question: "Is there a subscription fee?",
+    question: "Can I contribute to Know[ledge]?",
     answer:
-      "We offer both free and premium tiers. The free version includes access to basic timelines and stories, while premium unlocks advanced features, exclusive content, and ad-free browsing.",
+      "In the near future, yes! We are building a collaborative learning space where users can share historical insights, participate in discussions, and contribute recommended resources to enrich the platform. We welcome diverse perspectives and community-driven contributions that align with our mission of making history more inclusive and accessible.",
+  },
+  {
+    question: "Is Know[ledge] free?",
+    answer:
+      "We offer free access to core content, with premium features available for users who want a deeper, more interactive experience. Premium members gain access to exclusive expert discussions, additional learning tools, and a more personalized experience.",
+  },
+  {
+    question: "How can I support Know[ledge]?",
+    answer:
+      "You can support us by signing up for early access, sharing the platform with your network, participating in discussions, and providing feedback to help us improve. By engaging with the community and contributing to the learning experience, you help shape a more inclusive and comprehensive historical resource.",
   },
 ];
 
@@ -63,7 +73,7 @@ export const FAQ = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Everything you need to know about Know History and how it can
+            Everything you need to know about Know[ledge] and how it can
             transform your learning experience.
           </p>
         </motion.header>

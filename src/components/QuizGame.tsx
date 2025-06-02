@@ -127,11 +127,31 @@ export const QuizGame = () => {
     return (
       <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-[#242B7A] to-[#3640ab] flex items-center justify-center">
         <motion.div
-          className="w-full max-w-2xl mx-auto text-center"
+          className="w-full max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold text-white mb-4"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Test your
+            <span className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] bg-clip-text text-transparent">
+              &nbsp;Know[ledge]
+            </span>
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-300 mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Challenge yourself with our interactive history quiz and discover
+            fascinating stories from the past!
+          </motion.p>
           <motion.div
             className="mb-8"
             animate={{ rotate: [0, 5, -5, 0] }}
