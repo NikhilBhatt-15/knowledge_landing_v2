@@ -123,6 +123,25 @@
   }
 }
 
+aside::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #CFABFA 0%, #D4E333 100%);
+  border-radius: 8px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #D4E333 0%, #CFABFA 100%);
+}
+
+aside {
+  scrollbar-width: thin;
+  scrollbar-color: #CFABFA #23205a;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

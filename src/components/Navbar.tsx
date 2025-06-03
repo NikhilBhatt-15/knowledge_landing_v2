@@ -17,26 +17,32 @@ export const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
+
           <motion.div
             className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <motion.img
-              src="/secondaryLogo.png"
-              alt="know[ledge] Logo"
-              className="h-10 w-auto"
-              whileHover={{ rotate: [0, -5, 5, 0] }}
-              transition={{ duration: 0.6 }}
-            />
-            <span className="text-2xl font-extrabold text-white tracking-tight">
-              <span className="bg-gradient-to-r from-[#CFABFA] to-[#D4E333] bg-clip-text text-transparent">
-                Know
+            <Link href="/" className="flex items-center">
+              <motion.img
+                src="/secondaryLogo.png"
+                alt="know[ledge] Logo"
+                className="h-10 w-auto"
+                whileHover={{ rotate: [0, -5, 5, 0] }}
+                transition={{ duration: 0.6 }}
+              />
+            </Link>
+            <Link href="/" className="hidden md:block">
+              <span className="text-2xl font-extrabold text-white tracking-tight">
+                <span className="bg-gradient-to-r from-[#CFABFA] to-[#D4E333] bg-clip-text text-transparent">
+                  Know
+                </span>
+                <span className="text-white">[</span>
+                <span className="text-[#D4E333]">ledge</span>
+                <span className="text-white">]</span>
               </span>
-              <span className="text-white">[</span>
-              <span className="text-[#D4E333]">ledge</span>
-              <span className="text-white">]</span>
-            </span>
+            </Link>
+
             {/* <span
               className={`text-lg sm:text-xl md:text-2xl font-bold font-poppins tracking-tight text-blue-900`}
             >
@@ -48,7 +54,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <motion.div whileHover={{ y: -2 }}>
               <Link
-                href="#home"
+                href="/"
                 className="text-gray-300 hover:text-[#D4E333] transition-colors duration-300 relative group"
               >
                 Home
@@ -57,7 +63,7 @@ export const Navbar = () => {
             </motion.div>
             <motion.div whileHover={{ y: -2 }}>
               <Link
-                href="#about"
+                href="/about-us"
                 className="text-gray-300 hover:text-[#D4E333] transition-colors duration-300 relative group"
               >
                 About Us

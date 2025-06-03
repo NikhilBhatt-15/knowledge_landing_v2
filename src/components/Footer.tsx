@@ -1,5 +1,8 @@
+"use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="py-12 px-6 border-t border-[#BDC4D1]/20 bg-[#242B7A]">
@@ -34,7 +37,7 @@ const Footer = () => {
               Join millions of learners on their historical journey.
             </p>
             <div className="flex space-x-4">
-              <motion.a
+              {/* <motion.a
                 href="#"
                 className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 whileHover={{ scale: 1.1 }}
@@ -49,90 +52,102 @@ const Footer = () => {
                 whileTap={{ scale: 0.9 }}
               >
                 Facebook
-              </motion.a>
+              </motion.a> */}
               <motion.a
-                href="#"
+                href="https://www.instagram.com/know_allhistory/"
+                target="_blank"
                 className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
                 Instagram
               </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/company/knowhistory/"
+                target="_blank"
+                className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                LinkedIn
+              </motion.a>
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-white font-semibold mb-4">Explore</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/ancient-history"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   Ancient History
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/medieval-times"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   Medieval Times
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/modern-era"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   Modern Era
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/world-wars"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   World Wars
-                </a>
+                </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/about-us"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <motion.a
+                  href="mailto:info@knowhistory.xyz"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   Contact
-                </a>
+                </motion.a>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/privacy-policy"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/terms-of-service"
                   className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
