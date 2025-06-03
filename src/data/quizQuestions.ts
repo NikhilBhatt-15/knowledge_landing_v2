@@ -9,17 +9,11 @@ export interface QuizQuestion {
 export const quizQuestions: QuizQuestion[] = [
   {
     image: "/quiz/ques1.jpeg",
-    question:
-      "Which ancient wonder of the world was located in Alexandria, Egypt?",
-    options: [
-      "The Hanging Gardens",
-      "The Lighthouse of Alexandria",
-      "The Colossus of Rhodes",
-      "The Temple of Artemis",
-    ],
-    correct: "The Lighthouse of Alexandria",
+    question: "Which ancient wonder was located in Babylon?",
+    options: ["Gardens", "Pyramid", "Mausoleum", "Lighthouse"],
+    correct: "Gardens",
     explanation:
-      "The Lighthouse of Alexandria was one of the Seven Wonders of the Ancient World, built around 280 BC.",
+      "The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, known for their impressive terraced greenery.",
   },
   {
     image: "/quiz/ques2.jpeg",
