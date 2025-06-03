@@ -63,16 +63,16 @@ export default function TermsPage() {
           </h1>
           <p className="mb-8 text-lg text-[#CFABFA]">Last updated: June 2025</p>
           <p className="text-sm sm:text-base lg:text-lg">
-            We are <strong>SocialShift Corp</strong> ("Company," "we," "us,"
-            "our"), a company registered in Delaware, United States, with its
-            registered office at 251 Falls Drive, Wilmington, New Castle County,
-            Delaware 19808.
+            We are <strong>SocialShift Corp</strong> (&quot;Company,&quot;
+            &quot;we,&quot; &quot;us,&quot; &quot;our&quot;), a company
+            registered in Delaware, United States, with its registered office at
+            251 Falls Drive, Wilmington, New Castle County, Delaware 19808.
           </p>
           <p className="text-sm sm:text-base lg:text-lg">
             We operate the mobile application <strong>Know[ledge]</strong> (the
-            "App"), along with any related products and services that reference
-            or link to these legal terms (the "Legal Terms") (collectively, the
-            "Services").
+            &quot;App&quot;), along with any related products and services that
+            reference or link to these legal terms (the &quot;Legal Terms&quot;)
+            (collectively, the &quot;Services&quot;).
           </p>
           <p className="text-sm sm:text-base lg:text-lg">
             You can contact us by:
@@ -94,10 +94,10 @@ export default function TermsPage() {
           </p>
           <p className="text-sm sm:text-base lg:text-lg">
             These Legal Terms constitute a legally binding agreement between
-            you, whether personally or on behalf of an entity ("you"), and
-            SocialShift Corp, regarding your access to and use of the Services.
-            By accessing the Services, you agree that you have read, understood,
-            and accepted these Legal Terms.{" "}
+            you, whether personally or on behalf of an entity (&quot;you&quot;),
+            and SocialShift Corp, regarding your access to and use of the
+            Services. By accessing the Services, you agree that you have read,
+            understood, and accepted these Legal Terms.{" "}
             <span className="font-bold text-[#D4E333]">
               IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, YOU MUST
               DISCONTINUE USE IMMEDIATELY.
@@ -157,8 +157,8 @@ export default function TermsPage() {
                   rights in our Services, including all source code, databases,
                   functionality, software, website designs, audio, video, text,
                   photographs, and graphics in the Services (collectively, the
-                  "Content"), as well as the trademarks, service marks, and
-                  logos contained therein (the "Marks").
+                  &quot;Content&quot;), as well as the trademarks, service
+                  marks, and logos contained therein (the &quot;Marks&quot;).
                 </p>
                 <p className="text-sm sm:text-base lg:text-lg mt-4">
                   Our Content and Marks are protected by copyright and trademark
@@ -168,7 +168,7 @@ export default function TermsPage() {
                 </p>
                 <p className="text-sm sm:text-base lg:text-lg mt-4">
                   The Content and Marks are provided in or through the Services
-                  "AS IS" for your personal, non-commercial use only.
+                  &quot;AS IS&quot; for your personal, non-commercial use only.
                 </p>
               </div>
 
@@ -178,8 +178,8 @@ export default function TermsPage() {
                 </h3>
                 <p className="text-sm sm:text-base lg:text-lg mb-4">
                   Subject to your compliance with these Legal Terms, including
-                  the "PROHIBITED ACTIVITIES" section below, we grant you a
-                  non-exclusive, non-transferable, revocable license to:
+                  the &quot;PROHIBITED ACTIVITIES&quot; section below, we grant
+                  you a non-exclusive, non-transferable, revocable license to:
                 </p>
                 <ul className="list-disc pl-4 sm:pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
                   <li>access the Services; and</li>
@@ -205,16 +205,17 @@ export default function TermsPage() {
                   Your submissions and contributions
                 </h3>
                 <p className="text-sm sm:text-base lg:text-lg">
-                  Please review this section and the "PROHIBITED ACTIVITIES"
-                  section carefully prior to using our Services to understand
-                  the (a) rights you give us and (b) obligations you have when
-                  you post or upload any content through the Services.
+                  Please review this section and the &quot;PROHIBITED
+                  ACTIVITIES&quot; section carefully prior to using our Services
+                  to understand the (a) rights you give us and (b) obligations
+                  you have when you post or upload any content through the
+                  Services.
                 </p>
                 <p className="text-sm sm:text-base lg:text-lg mt-4">
                   Submissions: By directly sending us any question, comment,
                   suggestion, idea, feedback, or other information about the
-                  Services ("Submissions"), you agree to assign to us all
-                  intellectual property rights in such Submission. You agree
+                  Services (&quot;Submissions&quot;), you agree to assign to us
+                  all intellectual property rights in such Submission. You agree
                   that we shall own this Submission and be entitled to its
                   unrestricted use and dissemination for any lawful purpose,
                   commercial or otherwise, without acknowledgment or
@@ -429,7 +430,8 @@ export default function TermsPage() {
               <li>
                 Upload or transmit (or attempt to upload or to transmit)
                 viruses, Trojan horses, or other material that interferes with
-                any party's uninterrupted use and enjoyment of the Services.
+                any party&apos;s uninterrupted use and enjoyment of the
+                Services.
               </li>
               <li>
                 Engage in any automated use of the system, such as using scripts
@@ -461,8 +463,8 @@ export default function TermsPage() {
               through the Services, including but not limited to text, writings,
               video, audio, photographs, music, graphics, comments, reviews,
               rating suggestions, personal information, or other material
-              ("Contributions"). Any Submission that is publicly posted shall
-              also be treated as a Contribution.
+              (&quot;Contributions&quot;). Any Submission that is publicly
+              posted shall also be treated as a Contribution.
             </p>
           </Section>
           <Section id="contribution-license" title="10. CONTRIBUTION LICENSE">
@@ -527,11 +529,12 @@ export default function TermsPage() {
             <p className="text-sm sm:text-base lg:text-lg">
               As part of the functionality of the Services, you may link your
               account with online accounts you have with third-party service
-              providers (each such account, a "Third-Party Account") by either:
-              (1) providing your Third-Party Account login information through
-              the Services; or (2) allowing us to access your Third-Party
-              Account, as is permitted under the applicable terms and conditions
-              that govern your use of each Third-Party Account.
+              providers (each such account, a &quot;Third-Party Account&quot;)
+              by either: (1) providing your Third-Party Account login
+              information through the Services; or (2) allowing us to access
+              your Third-Party Account, as is permitted under the applicable
+              terms and conditions that govern your use of each Third-Party
+              Account.
             </p>
           </Section>
           <Section
@@ -540,11 +543,11 @@ export default function TermsPage() {
           >
             <p className="text-sm sm:text-base lg:text-lg mb-4">
               The Services may contain (or you may be sent via the Site) links
-              to other websites ("Third-Party Websites") as well as articles,
-              photographs, text, graphics, pictures, designs, music, sound,
-              video, information, applications, software, and other content or
-              items belonging to or originating from third parties ("Third-Party
-              Content").
+              to other websites (&quot;Third-Party Websites&quot;) as well as
+              articles, photographs, text, graphics, pictures, designs, music,
+              sound, video, information, applications, software, and other
+              content or items belonging to or originating from third parties
+              (&quot;Third-Party Content&quot;).
             </p>
             <p className="text-sm sm:text-base lg:text-lg">
               Such Third-Party Websites and Third-Party Content are not

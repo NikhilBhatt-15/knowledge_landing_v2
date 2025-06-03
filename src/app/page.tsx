@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { FAQ } from "@/components/Faq";
 import { QuizGame as Quiz } from "@/components/QuizGame";

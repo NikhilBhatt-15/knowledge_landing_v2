@@ -8,9 +8,9 @@ export default function PrivacyPolicyPage() {
         <p className="mb-8 text-lg text-[#CFABFA]">Last updated: June 2025</p>
 
         <p className="mb-6">
-          This Privacy Policy describes SocialShift's policies and procedures on
-          the collection, use, and disclosure of your information when you use
-          the Service.
+          This Privacy Policy describes SocialShift&apos;s policies and
+          procedures on the collection, use, and disclosure of your information
+          when you use the Service.
         </p>
         <p className="mb-6">
           We use your personal data to provide and improve the Service. By using
@@ -42,9 +42,10 @@ export default function PrivacyPolicyPage() {
             provided by the Company.
           </li>
           <li>
-            <b>Company</b> (referred to as either "the Company", "We", "Us" or
-            "Our") refers to SocialShift, 251 Falls Drive, Wilmington, New
-            Castle County, Delaware 19808, United States.
+            <b>Company</b> (referred to as either &quot;the Company&quot;,
+            &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;) refers to
+            SocialShift, 251 Falls Drive, Wilmington, New Castle County,
+            Delaware 19808, United States.
           </li>
           <li>
             <b>Country</b> refers to: Delaware, United States
@@ -101,10 +102,10 @@ export default function PrivacyPolicyPage() {
         <h4 className="font-semibold mb-1">Usage Data</h4>
         <p className="mb-4">
           Usage Data is collected automatically when using the Service. Usage
-          Data may include information such as your device's IP address, browser
-          type, browser version, the pages of our Service that you visit, the
-          time and date of your visit, the time spent on those pages, unique
-          device identifiers and other diagnostic data.
+          Data may include information such as your device&apos;s IP address,
+          browser type, browser version, the pages of our Service that you
+          visit, the time and date of your visit, the time spent on those pages,
+          unique device identifiers and other diagnostic data.
         </p>
         <h4 className="font-semibold mb-1">
           Information from Third-Party Social Media Services
@@ -217,7 +218,7 @@ export default function PrivacyPolicyPage() {
           protect your Personal Data, we cannot guarantee its absolute security.
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">Children's Privacy</h3>
+        <h3 className="text-xl font-semibold mb-2">Children&apos;s Privacy</h3>
         <p className="mb-4">
           Our Service does not address anyone under the age of 13. We do not
           knowingly collect personally identifiable information from anyone
@@ -229,8 +230,8 @@ export default function PrivacyPolicyPage() {
         <p className="mb-4">
           Our Service may contain links to other websites that are not operated
           by us. If you click on a third party link, you will be directed to
-          that third party's site. We strongly advise you to review the Privacy
-          Policy of every site you visit.
+          that third party&apos;s site. We strongly advise you to review the
+          Privacy Policy of every site you visit.
         </p>
 
         <h3 className="text-xl font-semibold mb-2">
@@ -239,7 +240,7 @@ export default function PrivacyPolicyPage() {
         <p className="mb-4">
           We may update our Privacy Policy from time to time. We will notify you
           of any changes by posting the new Privacy Policy on this page and
-          updating the "Last updated" date.
+          updating the &quot;Last updated&quot; date.
         </p>
 
         <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
