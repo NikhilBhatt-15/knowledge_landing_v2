@@ -1,3 +1,24 @@
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Privacy Policy | Know[ledge] by SocialShift",
+  description:
+    "Read the Privacy Policy for Know[ledge] by SocialShift. Learn how we collect, use, and protect your personal information when you use our app and services.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Privacy Policy | Know[ledge] by SocialShift",
+    description:
+      "Learn how Know[ledge] by SocialShift collects, uses, and protects your data.",
+    url: "https://knowhistory.xyz/privacy-policy",
+    siteName: "Know[ledge]",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Know[ledge] by SocialShift",
+    description:
+      "Read how Know[ledge] by SocialShift handles your privacy and data.",
+  },
+};
 export default function PrivacyPolicyPage() {
   return (
     <main className="bg-[#242B7A] min-h-screen py-16 px-4 sm:px-8 text-white">

@@ -1,5 +1,25 @@
 import Link from "next/link";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Terms of Service | Know[ledge] by SocialShift",
+  description:
+    "Review the Terms and Conditions for using Know[ledge] by SocialShift. Understand your rights and responsibilities when accessing our app and services.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Terms of Service | Know[ledge] by SocialShift",
+    description:
+      "Read the Terms and Conditions for using Know[ledge] by SocialShift.",
+    url: "https://knowhistory.xyz/terms",
+    siteName: "Know[ledge]",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Service | Know[ledge] by SocialShift",
+    description:
+      "Review the Terms and Conditions for using Know[ledge] by SocialShift.",
+  },
+};
 export default function TermsPage() {
   return (
     <main className="bg-[#242B7A] min-h-screen py-16 px-4 sm:px-8 text-white">

@@ -15,6 +15,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  title: "know[ledge] - Unlock Hidden History",
+  description:
+    "Unlock untold history with know[ledge], the gamified, AI-powered app for interactive history timelines and decolonized, inclusive learning. Explore diverse stories, race and gender perspectives, and more.",
+  keywords: [
+    "untold history app",
+    "gamified history learning",
+    "interactive history timelines",
+    "AI history learning",
+    "decolonized education app",
+    "race and gender in history",
+    "inclusive history app",
+    "edtech history platform",
+    "learn diverse histories",
+  ],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -31,9 +45,30 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: "know[ledge] - Unlock Hidden History",
-  description:
-    "Your gateway to historical discovery through interactive learning",
+  openGraph: {
+    title: "know[ledge] - Unlock Hidden History",
+    description:
+      "Discover the untold stories of history with know[ledge], the interactive, gamified, and AI-powered app for inclusive and decolonized learning.",
+    url: "https://knowhistory.xyz/",
+    siteName: "know[ledge]",
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "know[ledge] - Unlock Hidden History",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "know[ledge] - Unlock Hidden History",
+    description:
+      "Explore diverse, interactive, and gamified history with know[ledge]. AI-powered timelines, decolonized education, and more.",
+    images: ["/logo.png"],
+  },
+  robots: "index, follow",
 };
 
 export default function RootLayout({
