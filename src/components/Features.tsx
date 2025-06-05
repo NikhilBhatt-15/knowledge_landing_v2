@@ -187,7 +187,7 @@ export const Features = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.div
+          {/* <motion.div
             className="inline-block"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -208,7 +208,7 @@ export const Features = () => {
             >
               Explore Features
             </motion.button>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

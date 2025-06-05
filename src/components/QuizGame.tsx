@@ -9,19 +9,21 @@ import {
   Star,
   CheckCircle2,
   XCircle,
-  Smile,
-  BookOpen,
-  ThumbsUp,
+  Download,
+  Share2,
   Award,
+  ThumbsUp,
+  BookOpen,
+  Smile,
 } from "lucide-react";
 import { quizQuestions as baseQuestions } from "../data/quizQuestions";
 import { ConfettiAnimation } from "./ConfettiAnimation";
 import Image from "next/image";
+import { DownloadModal } from "./DownloadModal";
 
-// Add an image property to each question in your data file or here:
 const quizQuestions = baseQuestions.map((q, i) => ({
   ...q,
-  image: q.image || `/quiz/q${i + 1}.jpg`, // fallback or set your own images
+  image: q.image || `/quiz/q${i + 1}.jpg`,
 }));
 
 export const QuizGame = () => {
@@ -45,6 +47,35 @@ export const QuizGame = () => {
     }
   }, [quiz.gameStarted]);
 
+  // Auto-advance after feedback
+  useEffect(() => {
+    if (quiz.showFeedback) {
+      const timeout = setTimeout(() => {
+        if (quiz.isCorrect && quiz.score + 1 === shuffledQuestions.length) {
+          setShowConfetti(true);
+        }
+        if (quiz.currentQuestion + 1 < shuffledQuestions.length) {
+          setQuiz((prev) => ({
+            ...prev,
+            currentQuestion: prev.currentQuestion + 1,
+            selectedAnswer: null,
+            showFeedback: false,
+            isCorrect: false,
+          }));
+        } else {
+          setQuiz((prev) => ({ ...prev, showResult: true }));
+        }
+      }, 1500);
+      return () => clearTimeout(timeout);
+    }
+  }, [
+    quiz.showFeedback,
+    quiz.currentQuestion,
+    quiz.score,
+    quiz.isCorrect,
+    shuffledQuestions.length,
+  ]);
+
   const startGame = () => {
     setQuiz({
       currentQuestion: 0,
@@ -55,6 +86,7 @@ export const QuizGame = () => {
       showFeedback: false,
       isCorrect: false,
     });
+    setShowConfetti(false);
   };
 
   const handleAnswerSelect = (answer: string) => {
@@ -68,24 +100,6 @@ export const QuizGame = () => {
       isCorrect,
       score: isCorrect ? prev.score + 1 : prev.score,
     }));
-
-    if (isCorrect && quiz.score + 1 === shuffledQuestions.length) {
-      setShowConfetti(true);
-    }
-  };
-
-  const nextQuestion = () => {
-    if (quiz.currentQuestion + 1 < shuffledQuestions.length) {
-      setQuiz((prev) => ({
-        ...prev,
-        currentQuestion: prev.currentQuestion + 1,
-        selectedAnswer: null,
-        showFeedback: false,
-        isCorrect: false,
-      }));
-    } else {
-      setQuiz((prev) => ({ ...prev, showResult: true }));
-    }
   };
 
   const resetGame = () => {
@@ -123,11 +137,24 @@ export const QuizGame = () => {
     return "Keep studying! History is fascinating!";
   };
 
+  const getBadgeColor = () => "from-[#D4E333] to-[#CFABFA]";
+
+  const shareScore = () => {
+    const text = `I just scored ${quiz.score}/${
+      shuffledQuestions.length
+    } on the Know History quiz! ${getScoreMessage()}`;
+    if (navigator.share) {
+      navigator.share({ text });
+    } else {
+      navigator.clipboard.writeText(text);
+    }
+  };
+
   if (!quiz.gameStarted) {
     return (
-      <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-[#242B7A] to-[#3640ab] flex items-center justify-center">
+      <div className="h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#242B7A] to-[#3640ab] flex items-center justify-center py-0 px-2">
         <motion.div
-          className="w-full max-w-3xl mx-auto text-center"
+          className="w-full max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -191,7 +218,7 @@ export const QuizGame = () => {
 
   if (quiz.showResult) {
     return (
-      <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-[#242B7A] to-[#3640ab] flex items-center justify-center">
+      <div className="h-screen w-full overflow-x-hidden bg-[#242B7A] flex items-center justify-center py-0 px-2">
         <motion.div
           className="w-full max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -199,18 +226,38 @@ export const QuizGame = () => {
           transition={{ duration: 0.6 }}
         >
           {showConfetti && <ConfettiAnimation />}
+          {/* Achievement Badge */}
           <motion.div
-            className="mb-6"
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            className="relative mb-8"
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
-            {getScoreIcon()}
+            <div
+              className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${getBadgeColor()} flex items-center justify-center shadow-2xl`}
+            >
+              <motion.div
+                className="flex items-center justify-center"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                {getScoreIcon()}
+              </motion.div>
+            </div>
+            <motion.div
+              className="absolute -top-2 -right-2 bg-[#D4E333] text-[#242B7A] rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.6, type: "spring" }}
+            >
+              <Trophy className="w-6 h-6" />
+            </motion.div>
           </motion.div>
           <motion.h2
             className="text-4xl font-bold text-white mb-4"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
           >
             Quiz Complete!
           </motion.h2>
@@ -230,6 +277,33 @@ export const QuizGame = () => {
           >
             {getScoreMessage()}
           </motion.p>
+
+          <motion.div
+            className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 mb-8 border border-[#D4E333]/20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <h3 className="text-2xl font-bold text-white mb-3">
+              Want to explore more{" "}
+              <span className="text-[#D4E333]">hidden histories</span>?
+            </h3>
+            <p className="text-gray-300 mb-4">
+              Download Know History for unlimited quizzes, interactive
+              timelines, and untold stories from around the world.
+            </p>
+            <DownloadModal>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-bold px-8 py-3 rounded-full text-lg">
+                  <Download className="w-5 h-5 mr-2" />
+                  Get the Full App
+                </Button>
+              </motion.div>
+            </DownloadModal>
+          </motion.div>
           <motion.div
             className="flex gap-4 justify-center"
             initial={{ y: 30, opacity: 0 }}
@@ -238,9 +312,19 @@ export const QuizGame = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
+                onClick={shareScore}
+                variant="outline"
+                className="border-[#CFABFA] text-[#CFABFA] hover:bg-[#CFABFA]/10 rounded-full px-6 py-3"
+              >
+                <Share2 className="w-5 h-5 mr-2" />
+                Share Score
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
                 onClick={resetGame}
-                size="lg"
-                className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-bold px-6 py-3 rounded-full"
+                variant="outline"
+                className="border-[#D4E333] text-[#D4E333] hover:bg-[#D4E333]/10 rounded-full px-6 py-3"
               >
                 <RotateCcw className="w-5 h-5 mr-2" />
                 Play Again
@@ -257,9 +341,9 @@ export const QuizGame = () => {
     ((quiz.currentQuestion + 1) / shuffledQuestions.length) * 100;
 
   return (
-    <div className="min-h-screen py-4 px-2 bg-gradient-to-b from-[#242B7A] to-[#3640ab] flex items-center justify-center">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#242B7A] to-[#3640ab] flex items-center justify-center py-0 px-2">
       <motion.div
-        className="w-full max-w-xl mx-auto"
+        className="w-full max-w-2xl mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -278,7 +362,7 @@ export const QuizGame = () => {
           <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
             <motion.div
               className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] h-2 rounded-full"
-              initial={{ width: 0 }}
+              initial={false}
               animate={{
                 width: `${progress}%`,
               }}
@@ -287,7 +371,6 @@ export const QuizGame = () => {
             />
           </div>
         </div>
-
         {/* Question Card */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -297,8 +380,8 @@ export const QuizGame = () => {
             exit={{ x: -300, opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <Card className="bg-white/10 backdrop-blur-md border-[#D4E333]/30 mb-4">
-              <CardContent className="p-4 md:p-6">
+            <Card className="bg-white/10 backdrop-blur-md border-[#D4E333]/30 mb-4 w-full max-w-2xl mx-auto">
+              <CardContent className="p-4 md:p-6 w-full">
                 {/* Question Image */}
                 <div className="w-full flex justify-center mb-4">
                   <div className="relative w-40 h-28 md:w-60 md:h-40 rounded-2xl overflow-hidden shadow-lg border-2 border-[#CFABFA]/40">
@@ -321,7 +404,7 @@ export const QuizGame = () => {
                   {currentQ.question}
                 </motion.h3>
                 {/* Options as 2-column grid on md+ screens */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   {currentQ.options.map((option, index) => {
                     const isCorrect = option === currentQ.correct;
                     const isSelected = quiz.selectedAnswer === option;
@@ -333,11 +416,12 @@ export const QuizGame = () => {
                         transition={{ delay: 0.3 + index * 0.1 }}
                         whileHover={{ scale: quiz.showFeedback ? 1 : 1.03 }}
                         whileTap={{ scale: quiz.showFeedback ? 1 : 0.97 }}
+                        className="w-full"
                       >
                         <Button
                           onClick={() => handleAnswerSelect(option)}
                           disabled={quiz.showFeedback}
-                          className={`w-full p-4 md:p-5 text-left text-base md:text-lg font-medium rounded-xl transition-all duration-300 ${
+                          className={`w-full min-w-0 flex items-center p-4 md:p-5 text-left text-base md:text-lg font-medium rounded-xl transition-all duration-300 break-words ${
                             quiz.showFeedback
                               ? isCorrect
                                 ? "bg-gradient-to-r from-green-400 to-green-500 text-white border-green-400"
@@ -350,31 +434,33 @@ export const QuizGame = () => {
                           }`}
                           variant="outline"
                         >
-                          <span className="mr-3 font-bold text-[#D4E333]">
+                          <span className="w-8 shrink-0 mr-3 font-bold text-[#D4E333] text-center">
                             {String.fromCharCode(65 + index)}
                           </span>
-                          {option}
+                          <span className="flex-1 break-words whitespace-pre-wrap min-w-0">
+                            {option}
+                          </span>
                           <AnimatePresence>
                             {quiz.showFeedback && isCorrect && (
                               <motion.span
-                                className="float-right flex items-center"
+                                className="ml-2 flex items-center"
                                 initial={{ scale: 0, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0, opacity: 0 }}
                                 transition={{ delay: 0.1 }}
                               >
-                                <CheckCircle2 className="w-5 h-5 text-green-300 ml-2" />
+                                <CheckCircle2 className="w-5 h-5 text-green-300" />
                               </motion.span>
                             )}
                             {quiz.showFeedback && isSelected && !isCorrect && (
                               <motion.span
-                                className="float-right flex items-center"
+                                className="ml-2 flex items-center"
                                 initial={{ scale: 0, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0, opacity: 0 }}
                                 transition={{ delay: 0.1 }}
                               >
-                                <XCircle className="w-5 h-5 text-red-300 ml-2" />
+                                <XCircle className="w-5 h-5 text-red-300" />
                               </motion.span>
                             )}
                           </AnimatePresence>
@@ -383,36 +469,45 @@ export const QuizGame = () => {
                     );
                   })}
                 </div>
-                {/* Reveal Explanation */}
+
+                {/* Feedback Animation */}
                 <AnimatePresence>
                   {quiz.showFeedback && (
                     <motion.div
-                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                      transition={{ duration: 0.5 }}
-                      className="mt-6 p-4 md:p-6 bg-gradient-to-r from-[#CFABFA]/30 to-[#D4E333]/20 border-2 border-[#CFABFA]/40 rounded-2xl text-center"
+                      className="text-center mt-4"
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0, opacity: 0 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                      }}
                     >
-                      <motion.p
-                        className="text-base md:text-xl font-semibold text-white mb-4"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
+                      <motion.div
+                        className={`text-4xl mb-2 flex items-center justify-center`}
+                        animate={
+                          quiz.isCorrect
+                            ? { rotate: [0, 10, -10, 0] }
+                            : { x: [-5, 5, -5, 5, 0] }
+                        }
+                        transition={{ duration: 0.5 }}
                       >
-                        {currentQ.explanation}
-                      </motion.p>
-                      <motion.button
-                        onClick={nextQuestion}
-                        className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#D4E333] to-[#CFABFA] rounded-full text-[#242B7A] font-black text-base md:text-lg shadow-lg hover:scale-105 transition-transform flex items-center gap-2 mx-auto"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {quiz.currentQuestion + 1 < shuffledQuestions.length ? (
-                          <>Next Question</>
+                        {quiz.isCorrect ? (
+                          <CheckCircle2 className="w-10 h-10 text-green-400" />
                         ) : (
-                          <>See Results</>
+                          <XCircle className="w-10 h-10 text-red-400" />
                         )}
-                      </motion.button>
+                      </motion.div>
+                      <p
+                        className={`text-lg font-bold ${
+                          quiz.isCorrect ? "text-green-400" : "text-red-400"
+                        }`}
+                      >
+                        {quiz.isCorrect
+                          ? "Correct! Well done!"
+                          : "Oops! Better luck next time!"}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>

@@ -8,103 +8,67 @@ export interface QuizQuestion {
 
 export const quizQuestions: QuizQuestion[] = [
   {
-    image: "/quiz/ques1.jpeg",
-    question: "Which ancient wonder was located in Babylon?",
-    options: ["Gardens", "Pyramid", "Mausoleum", "Lighthouse"],
-    correct: "Gardens",
+    image: "/quiz/quiz1.png",
+    question:
+      "Who was the first Black woman to argue a case before the U.S. Supreme Court in 1956?",
+    options: [
+      "Rosa Parks",
+      "Shirley Chisholm",
+      "Ida B. Wells",
+      "Constance Baker Motley",
+    ],
+    correct: "Constance Baker Motley",
     explanation:
       "The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, known for their impressive terraced greenery.",
   },
   {
-    image: "/quiz/ques2.jpeg",
-    question: "Who was the first woman to win a Nobel Prize?",
-    options: [
-      "Marie Curie",
-      "Rosalind Franklin",
-      "Dorothy Hodgkin",
-      "Lise Meitner",
-    ],
-    correct: "Marie Curie",
+    image: "/quiz/quiz2.png",
+    question:
+      "Which Native American tribe had a recognized third gender known as “Two-Spirit” long before European colonization?",
+    options: ["Navajo (Diné)", "Cherokee", "Sioux", "Apache"],
+    correct: "Navajo (Diné)",
     explanation:
       "Marie Curie won the Nobel Prize in Physics in 1903, shared with her husband Pierre Curie and Henri Becquerel.",
   },
   {
-    image: "/quiz/ques3.jpeg",
-    question: "Which civilization built Machu Picchu?",
-    options: ["Aztecs", "Mayans", "Incas", "Olmecs"],
-    correct: "Incas",
+    image: "/quiz/quiz3.png",
+    question:
+      "Who was the first openly gay elected official in the U.S. before Harvey Milk?",
+    options: [
+      "Harvey Milk",
+      "Larry Kramer",
+      "Kathy Kozachenko",
+      "Bayard Rustin",
+    ],
+    correct: "Kathy Kozachenko",
     explanation:
       "Machu Picchu was built by the Inca civilization around 1450 CE in Peru.",
   },
   {
-    image: "/quiz/ques1.jpeg",
-    question: "In what year did the Berlin Wall fall?",
-    options: ["1987", "1989", "1991", "1993"],
-    correct: "1989",
+    image: "/quiz/quiz4.png",
+    question:
+      "Which Mexican-American activist was a key member of the Mexican Civil Rights Committee and fought for voting rights and racial justice in the 1940s?",
+    options: [
+      "Josephine Fierro de Bright",
+      "Sylvia Rivera",
+      "Lupe Anguiano",
+      "Antonia Pantoja",
+    ],
+    correct: "Josephine Fierro de Bright",
     explanation:
       "The Berlin Wall fell on November 9, 1989, marking a significant moment in the end of the Cold War.",
   },
   {
-    image: "/quiz/ques2.jpeg",
+    image: "/quiz/quiz5.png",
     question:
-      "Who was the first African American to serve as President of the United States?",
+      "In the 1950s, which U.S. city was home to the first known lesbian publication, Vice Versa, created and distributed in secret?",
     options: [
-      "Martin Luther King Jr.",
-      "Barack Obama",
-      "Frederick Douglass",
-      "Thurgood Marshall",
+      "New York City, New York",
+      "Los Angeles, California",
+      "San Francisco, California",
+      "Chicago, Illinois",
     ],
-    correct: "Barack Obama",
+    correct: "Los Angeles, California",
     explanation: "Barack Obama served as the 44th President from 2009 to 2017.",
-  },
-  {
-    image: "/quiz/ques3.jpeg",
-    question: "Which empire was ruled by Cleopatra VII?",
-    options: [
-      "Roman Empire",
-      "Greek Empire",
-      "Persian Empire",
-      "Egyptian Empire",
-    ],
-    correct: "Egyptian Empire",
-    explanation:
-      "Cleopatra VII was the last active pharaoh of Ptolemaic Egypt from 69 BC until her death in 30 BC.",
-  },
-  {
-    image: "/quiz/ques1.jpeg",
-    question: "What year did World War II end?",
-    options: ["1944", "1945", "1946", "1947"],
-    correct: "1945",
-    explanation:
-      "World War II ended in 1945 with Japan's surrender on September 2, 1945.",
-  },
-  {
-    image: "/quiz/ques2.jpeg",
-    question: "Who painted the famous 'Girl with a Pearl Earring'?",
-    options: [
-      "Leonardo da Vinci",
-      "Vincent van Gogh",
-      "Johannes Vermeer",
-      "Rembrandt",
-    ],
-    correct: "Johannes Vermeer",
-    explanation:
-      "Johannes Vermeer painted this masterpiece around 1665 during the Dutch Golden Age.",
-  },
-  {
-    image: "/quiz/ques3.jpeg",
-    question: "Which language was primarily used in the Roman Empire?",
-    options: ["Greek", "Latin", "Hebrew", "Aramaic"],
-    correct: "Latin",
-    explanation:
-      "Latin was the official language of the Roman Empire and the basis for many modern Romance languages.",
-  },
-  {
-    image: "/quiz/ques1.jpeg",
-    question: "Who led the Mongol Empire at its largest extent?",
-    options: ["Genghis Khan", "Kublai Khan", "Möngke Khan", "Ögedei Khan"],
-    correct: "Kublai Khan",
-    explanation:
-      "While Genghis Khan founded the empire, it reached its largest extent under his grandson Kublai Khan.",
   },
 ];

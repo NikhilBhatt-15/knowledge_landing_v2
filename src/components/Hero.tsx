@@ -7,35 +7,35 @@ import { PhoneMockupv2 } from "./PhoneMockupv2";
 const screens = [
   {
     title: "Welcome to know[ledge]",
-    image: "/screens/screen-1.jpg",
+    image: "/new-screens/screen1.jpeg",
     bg: "from-blue-500 to-purple-500",
     content: "Discover a world of knowledge at your fingertips.",
   },
   {
     title: "Explore Topics",
-    image: "/screens/screen-2.jpg",
+    image: "/new-screens/screen2.jpeg",
     bg: "from-purple-500 to-pink-500",
     content: "Dive into a wide range of topics and expand your horizons.",
   },
   {
     title: "Engage with Content",
-    image: "/screens/screen-3.jpg",
+    image: "/new-screens/screen3.jpeg",
     bg: "from-pink-500 to-red-500",
     content: "Interact with articles, videos, and more.",
   },
   {
     title: "Community Insights",
-    image: "/screens/screen-4.jpg",
+    image: "/new-screens/screen4.jpg",
     bg: "from-orange-500 to-red-500",
   },
   {
     title: "Interactive Stories",
-    image: "/screens/screen-5.jpg",
+    image: "/new-screens/screen5.jpeg",
     bg: "from-red-500 to-pink-500",
   },
   {
     title: "Knowledge Hub",
-    image: "/screens/screen-6.jpg",
+    image: "/new-screens/screen6.jpg",
     bg: "from-pink-500 to-purple-500",
   },
 ];
@@ -98,9 +98,9 @@ export const Hero = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Explore the overlooked, untold, and erased parts of history
-              through daily quests, interactive timelines, and gamified
-              challenges.
+              Know[ledge] is the free, fun, and powerful way to explore history
+              through daily quests, gamified lessons, and interactive timelines
+              that reveal the moments and voices too often ignored.
             </motion.div>
 
             <motion.h2
@@ -112,7 +112,7 @@ export const Hero = () => {
               Learn something new and real every day.
             </motion.h2>
 
-            <motion.p
+            {/* <motion.p
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -121,7 +121,7 @@ export const Hero = () => {
               Know[ledge] is the free, fun, and powerful way to explore history
               through daily quests, gamified lessons, and interactive timelines
               that reveal the moments and voices too often ignored.
-            </motion.p>
+            </motion.p> */}
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
