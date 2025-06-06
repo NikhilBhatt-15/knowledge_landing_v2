@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
+        url: "/opengraph.png",
         width: 1200,
         height: 630,
         alt: "know[ledge] - Unlock Hidden History",
