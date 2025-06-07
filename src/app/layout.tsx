@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "know[ledge] - Unlock Hidden History",
     description:
       "Discover the untold stories of history with know[ledge], the interactive, gamified, and AI-powered app for inclusive and decolonized learning.",
-    url: "https://knowledge-landing-v2.vercel.app//",
+    url: "https://knowledge-landing-v2.vercel.app/",
     siteName: "know[ledge]",
     type: "website",
     images: [

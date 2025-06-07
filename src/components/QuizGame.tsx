@@ -170,7 +170,7 @@ export const QuizGame = () => {
   
   🧠 Can you beat my score? Discover hidden histories now 👇`;
 
-    const quizUrl = "https://knowledge-landing-v2.vercel.app/"; // Replace with your actual app/landing page URL
+    const quizUrl = "https://knowledge-landing-v2.vercel.app/";
 
     if (platform === "facebook") {
       const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -183,7 +183,9 @@ export const QuizGame = () => {
       )}&url=${encodeURIComponent(quizUrl)}`;
       window.open(twitterShareUrl, "_blank");
     } else if (platform === "others") {
-      const text = `I just scored ${score}/${total} on the Know[ledge] Quiz! ${getScoreMessage()}`;
+      const text = `I just scored ${score}/${total} on the Know[ledge] Quiz! ${getScoreMessage()}
+       Discover hidden histories now: ${quizUrl}`;
+
       if (navigator.share) {
         navigator.share({ text });
       } else {
