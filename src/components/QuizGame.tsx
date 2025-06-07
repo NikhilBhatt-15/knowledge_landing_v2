@@ -165,7 +165,7 @@ export const QuizGame = () => {
   ) => {
     const score = quiz.score;
     const total = shuffledQuestions.length;
-
+    const shareUrl = `https://knowledge-landing-v2.vercel.app/share/score/${score}/${total}`;
     const message = `🏆 I scored ${score}/${total} on the Know[ledge] Quiz! 🔥
   
   🧠 Can you beat my score? Discover hidden histories now 👇`;
@@ -174,7 +174,7 @@ export const QuizGame = () => {
 
     if (platform === "facebook") {
       const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-        quizUrl
+        shareUrl
       )}&quote=${encodeURIComponent(message)}`;
       window.open(fbShareUrl, "_blank");
     } else if (platform === "twitter") {
@@ -596,7 +596,7 @@ export const ShareModal = ({
   if (!open) return null;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#242B7A]/80 to-[#3640ab]/90"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#242B7A]/80 via-[#D4E333]/20 to-[#CFABFA]/80"
       onClick={onClose}
     >
       <div
