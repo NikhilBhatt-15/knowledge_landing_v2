@@ -113,14 +113,14 @@ export const Navbar = () => {
           >
             <div className="py-4 space-y-4 border-t border-[#D4E333]/20">
               <Link
-                href="#home"
+                href="/"
                 className="block text-gray-300 hover:text-[#D4E333] transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
-                href="#about"
+                href="/about-us"
                 className="block text-gray-300 hover:text-[#D4E333] transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
