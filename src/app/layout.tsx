@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "know[ledge] - Unlock Hidden History",
     description:
       "Explore diverse, interactive, and gamified history with know[ledge]. AI-powered timelines, decolonized education, and more.",
-    images: ["/opengraph.png"],
+    images: "https://knowledge-landing-v2.vercel.app/opengraph.png",
   },
   robots: "index, follow",
 };
