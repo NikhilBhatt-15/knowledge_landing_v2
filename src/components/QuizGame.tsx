@@ -165,7 +165,7 @@ export const QuizGame = () => {
   ) => {
     const score = quiz.score;
     const total = shuffledQuestions.length;
-    const shareUrl = `https://knowledge-landing-v2.vercel.app/share/score/${score}/${total}`;
+    const shareUrl = `https://knowledge-landing-v2.vercel.app/share/${score}/${total}`;
     const message = `🏆 I scored ${score}/${total} on the Know[ledge] Quiz! 🔥
   
   🧠 Can you beat my score? Discover hidden histories now 👇`;
