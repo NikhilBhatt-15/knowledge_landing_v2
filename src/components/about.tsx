@@ -169,7 +169,7 @@ export const AboutPage = () => {
               <motion.div
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 0 40px rgba(212, 227, 51, 0.4)",
+                  cursor: "pointer",
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block"
@@ -182,7 +182,7 @@ export const AboutPage = () => {
                       "_blank"
                     );
                   }}
-                  className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-semibold px-8 py-6 text-lg rounded-full shadow-2xl transition-all duration-300"
+                  className="bg-gradient-to-r cursor-pointer from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-semibold px-8 py-6 text-lg rounded-full shadow-2xl transition-all duration-300"
                   aria-label="Download for iOS"
                 >
                   <Download className="w-5 h-5 mr-2" />
