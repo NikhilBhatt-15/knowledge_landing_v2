@@ -138,7 +138,7 @@ export const Hero = () => {
                   boxShadow: "0 0 40px rgba(212, 227, 51, 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-bold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-[#D4E333]/25 transition-all duration-300"
+                className="flex items-center gap-2 bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-bold px-8 py-3 text-lg rounded-full shadow-2xl hover:shadow-[#D4E333]/25 transition-all duration-300"
               >
                 <svg
                   x="0px"
@@ -174,7 +174,7 @@ export const Hero = () => {
                   boxShadow: "0 0 30px rgba(212, 227, 51, 0.3)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 border border-[#D4E333] text-[#D4E333] hover:bg-[#D4E333] hover:text-[#242B7A] px-8 py-4 text-lg rounded-full transition-all duration-300"
+                className="flex items-center gap-2 border border-[#D4E333] text-[#D4E333] hover:bg-[#D4E333] hover:text-[#242B7A] px-8 py-3 text-lg rounded-full transition-all duration-300"
               >
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5"
@@ -185,6 +185,18 @@ export const Hero = () => {
                 </svg>
                 Download for Apple
               </motion.a>
+              <motion.div
+                className="sm:hidden   flex flex-col items-center"
+                animate={{ y: [0, 10, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                aria-hidden="true"
+              >
+                <ArrowDown className="w-8 h-8 text-[#D4E333]" />
+              </motion.div>
             </motion.div>
           </motion.div>
 
@@ -205,7 +217,7 @@ export const Hero = () => {
         </div>
 
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 "
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           aria-hidden="true"

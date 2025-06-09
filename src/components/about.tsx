@@ -176,6 +176,12 @@ export const AboutPage = () => {
               >
                 <Button
                   size="lg"
+                  onClick={() => {
+                    window.open(
+                      "https://testflight.apple.com/join/xhzmTnHr",
+                      "_blank"
+                    );
+                  }}
                   className="bg-gradient-to-r from-[#D4E333] to-[#CFABFA] hover:from-[#D4E333]/90 hover:to-[#CFABFA]/90 text-[#242B7A] font-semibold px-8 py-6 text-lg rounded-full shadow-2xl transition-all duration-300"
                   aria-label="Download for iOS"
                 >
