@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "know[ledge] - Unlock Hidden History",
     description:
       "Discover the untold stories of history with know[ledge], the interactive, gamified, and AI-powered app for inclusive and decolonized learning.",
-    url: "https://knowledge-landing-v2.vercel.app/",
+    url: "https://www.knowhistory.xyz/",
     siteName: "know[ledge]",
     type: "website",
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "know[ledge] - Unlock Hidden History",
     description:
       "Explore diverse, interactive, and gamified history with know[ledge]. AI-powered timelines, decolonized education, and more.",
-    images: "https://knowledge-landing-v2.vercel.app/opengraph.png",
+    images: "https://www.knowhistory.xyz/opengraph.png",
   },
   robots: "index, follow",
 };

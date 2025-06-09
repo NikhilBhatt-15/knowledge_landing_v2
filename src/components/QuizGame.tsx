@@ -165,12 +165,12 @@ export const QuizGame = () => {
   ) => {
     const score = quiz.score;
     const total = shuffledQuestions.length;
-    const shareUrl = `https://knowledge-landing-v2.vercel.app/share/${score}/${total}`;
+    const shareUrl = `https://www.knowhistory.xyz/share/${score}/${total}`;
     const message = `🏆 I scored ${score}/${total} on the Know[ledge] Quiz! 🔥
   
   🧠 Can you beat my score? Discover hidden histories now 👇`;
 
-    const quizUrl = "https://knowledge-landing-v2.vercel.app/";
+    const quizUrl = "https://www.knowhistory.xyz/";
 
     if (platform === "facebook") {
       const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(

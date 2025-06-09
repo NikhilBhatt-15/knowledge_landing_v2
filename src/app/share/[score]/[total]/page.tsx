@@ -14,7 +14,7 @@ export async function generateMetadata({
   const title = `🏆 I scored ${score}/${total} on Know[ledge]!`;
   const description =
     "Can you beat my score? Discover untold histories and test your knowledge!";
-  const imageUrl = `https://knowledge-landing-v2.vercel.app/share-images/badge-${score}.png`; // Optional
+  const imageUrl = `https://www.knowhistory.xyz/share-images/badge-${score}.png`; // Optional
 
   return {
     title,
@@ -22,7 +22,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://knowledge-landing-v2.vercel.app/share/${score}/${total}`,
+      url: `https://www.knowhistory.xyz/share/${score}/${total}`,
       images: [
         {
           url: imageUrl,
