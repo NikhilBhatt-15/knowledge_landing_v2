@@ -178,7 +178,7 @@ export const AboutPage = () => {
                   size="lg"
                   onClick={() => {
                     window.open(
-                      "https://testflight.apple.com/join/xhzmTnHr",
+                      "https://apps.apple.com/us/app/know-ledge/id6744873533",
                       "_blank"
                     );
                   }}

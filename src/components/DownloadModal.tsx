@@ -24,7 +24,7 @@ export const DownloadModal = ({
       gradient: "from-[#000000] to-[#434343]",
       text: "Download on the",
       subtext: "App Store",
-      link: "https://testflight.apple.com/join/xhzmTnHr",
+      link: "https://apps.apple.com/us/app/know-ledge/id6744873533",
       iconColor: "text-white",
     },
     {

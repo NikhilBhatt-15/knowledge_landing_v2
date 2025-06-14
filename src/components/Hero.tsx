@@ -166,7 +166,7 @@ export const Hero = () => {
                 Download for Android
               </motion.a>
               <motion.a
-                href="https://testflight.apple.com/join/xhzmTnHr"
+                href="https://apps.apple.com/us/app/know-ledge/id6744873533"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{
