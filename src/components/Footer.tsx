@@ -71,6 +71,15 @@ const Footer = () => {
               >
                 LinkedIn
               </motion.a>
+              <motion.a
+                href="https://www.tiktok.com/@knowledgeapp"
+                target="_blank"
+                className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                TikTok
+              </motion.a>
             </div>
           </div>
 
