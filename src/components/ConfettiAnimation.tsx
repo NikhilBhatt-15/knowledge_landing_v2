@@ -11,8 +11,12 @@ interface Confetti {
 
 export const ConfettiAnimation = () => {
   const [confetti, setConfetti] = useState<Confetti[]>([]);
+  const [windowHeight, setWindowHeight] = useState(1000);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight);
+    }
     const colors = ["#D4E333", "#CFABFA", "#FFD700", "#FF6B6B", "#4ECDC4"];
     const newConfetti: Confetti[] = [];
 
@@ -42,7 +46,7 @@ export const ConfettiAnimation = () => {
           }}
           initial={{ y: -100, rotate: 0, opacity: 1 }}
           animate={{
-            y: window.innerHeight + 100,
+            y: windowHeight + 100,
             rotate: 360,
             opacity: 0,
           }}
@@ -59,8 +63,12 @@ export const ConfettiAnimation = () => {
 
 export const SadConfettiAnimation = () => {
   const [confetti, setConfetti] = useState<Confetti[]>([]);
+  const [windowHeight, setWindowHeight] = useState(1000);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight);
+    }
     const colors = ["#60A5FA", "#64748B", "#A3A3A3", "#CBD5E1", "#94A3B8"];
     const newConfetti: Confetti[] = [];
 
@@ -95,7 +103,7 @@ export const SadConfettiAnimation = () => {
           }}
           initial={{ y: -100, rotate: 0, opacity: 0.7 }}
           animate={{
-            y: window.innerHeight + 80,
+            y: windowHeight + 80,
             rotate: 20 + Math.random() * 40,
             opacity: 0.2,
           }}

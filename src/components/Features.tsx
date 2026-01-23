@@ -3,23 +3,23 @@ import { Target, CalendarDays, Rocket } from "lucide-react";
 
 const features = [
   {
-    title: "Personalized Learning Paths",
+    title: "Personalized Feed",
     description:
-      "AI curates a unique feed based on your interests, preferred formats, and knowledge gaps.",
+      "A curated stream of stories and timelines shaped by your interests and what you choose to follow.",
     icon: <Target size={48} className="text-[#D4E333] drop-shadow-lg" />,
     gradient: "from-[#D4E333] to-[#CFABFA]",
   },
   {
-    title: "Daily 'On This Day' Discoveries",
+    title: "Daily 'On This Day' Stories",
     description:
-      "Unlock hidden stories from history with bite-sized insights, interactive discussions, and surprise facts.",
+      "Daily moments from history surfaced with context, connections, and surprising details.",
     icon: <CalendarDays size={48} className="text-[#CFABFA] drop-shadow-lg" />,
     gradient: "from-[#CFABFA] to-[#D4E333]",
   },
   {
-    title: "Time Trek Gamification",
+    title: "Progress & Discovery",
     description:
-      "Earn rewards, badges, and unlock rare historical content as you explore.",
+      "Follow stories over time, unlock deeper layers, and track what you've explored as you go.",
     icon: <Rocket size={48} className="text-[#baba37] drop-shadow-lg" />,
     gradient: "from-[#D4E333] via-[#CFABFA] to-[#242B7A]",
   },
@@ -107,8 +107,7 @@ export const Features = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Discover powerful tools designed to make history engaging,
-            interactive, and personally meaningful.
+            Designed to help you follow stories deeper, connect moments across time, and see the bigger picture.
           </motion.p>
         </motion.div>
 

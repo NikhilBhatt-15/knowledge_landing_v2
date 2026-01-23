@@ -158,6 +158,14 @@ const Footer = () => {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-[#BDC4D1] hover:text-[#CFABFA] transition-colors"
+                >
+                  Terms of Use
+                </Link>
+              </li>
             </ul>
           </div>
         </motion.div>

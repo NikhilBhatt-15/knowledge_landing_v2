@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { ActiveTOC } from "@/components/ActiveTOC";
+
 export const metadata: Metadata = {
   title: "Terms of Service | Know[ledge] by SocialShift",
   description:
@@ -20,61 +22,46 @@ export const metadata: Metadata = {
       "Review the Terms and Conditions for using Know[ledge] by SocialShift.",
   },
 };
+
+const sections = [
+  "OUR SERVICES",
+  "INTELLECTUAL PROPERTY RIGHTS",
+  "USER REPRESENTATIONS",
+  "USER REGISTRATION",
+  "PURCHASES AND PAYMENT",
+  "SUBSCRIPTIONS",
+  "POLICY",
+  "PROHIBITED ACTIVITIES",
+  "USER GENERATED CONTRIBUTIONS",
+  "CONTRIBUTION LICENSE",
+  "MOBILE APPLICATION LICENSE",
+  "SOCIAL MEDIA",
+  "THIRD-PARTY WEBSITES AND CONTENT",
+  "ADVERTISERS",
+  "SERVICES MANAGEMENT",
+  "PRIVACY POLICY",
+  "DMCA NOTICE AND POLICY",
+  "TERM AND TERMINATION",
+  "MODIFICATIONS AND INTERRUPTIONS",
+  "GOVERNING LAW",
+  "DISPUTE RESOLUTION",
+  "CORRECTIONS",
+  "DISCLAIMER",
+  "LIMITATIONS OF LIABILITY",
+  "INDEMNIFICATION",
+  "USER DATA",
+  "ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES",
+  "CALIFORNIA USERS AND RESIDENTS",
+  "MISCELLANEOUS",
+  "CONTACT US",
+];
+
 export default function TermsPage() {
   return (
     <main className="bg-[#242B7A] min-h-screen py-16 px-4 sm:px-8 text-white">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
         {/* Sidebar Table of Contents */}
-        <aside className="hidden md:block w-64 flex-shrink-0 sticky top-24 self-start max-h-[80vh] overflow-y-auto pr-2">
-          <nav className="bg-[#23205a]/70 rounded-xl p-6 border border-[#CFABFA]/10">
-            <h2 className="text-lg font-bold mb-4 text-[#D4E333]">
-              Table of Contents
-            </h2>
-            <ul className="space-y-2 text-sm">
-              {[
-                "OUR SERVICES",
-                "INTELLECTUAL PROPERTY RIGHTS",
-                "USER REPRESENTATIONS",
-                "USER REGISTRATION",
-                "PURCHASES AND PAYMENT",
-                "SUBSCRIPTIONS",
-                "POLICY",
-                "PROHIBITED ACTIVITIES",
-                "USER GENERATED CONTRIBUTIONS",
-                "CONTRIBUTION LICENSE",
-                "MOBILE APPLICATION LICENSE",
-                "SOCIAL MEDIA",
-                "THIRD-PARTY WEBSITES AND CONTENT",
-                "ADVERTISERS",
-                "SERVICES MANAGEMENT",
-                "PRIVACY POLICY",
-                "DMCA NOTICE AND POLICY",
-                "TERM AND TERMINATION",
-                "MODIFICATIONS AND INTERRUPTIONS",
-                "GOVERNING LAW",
-                "DISPUTE RESOLUTION",
-                "CORRECTIONS",
-                "DISCLAIMER",
-                "LIMITATIONS OF LIABILITY",
-                "INDEMNIFICATION",
-                "USER DATA",
-                "ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES",
-                "CALIFORNIA USERS AND RESIDENTS",
-                "MISCELLANEOUS",
-                "CONTACT US",
-              ].map((item, i) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                    className="hover:text-[#CFABFA] transition-colors"
-                  >
-                    {i + 1}. {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </aside>
+        <ActiveTOC sections={sections} />
 
         {/* Main Content */}
         <article className="flex-1 prose prose-invert max-w-none">
