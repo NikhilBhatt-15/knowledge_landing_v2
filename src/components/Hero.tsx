@@ -3,40 +3,62 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 // import { PhoneMockup } from "./PhoneMockup";
 import { useState, useEffect } from "react";
+// import { PhoneMockupv2 } from "./PhoneMockupv2";
+import { PhoneMockupv3 } from "./PhoneMockupv3";
 import { PhoneMockupv2 } from "./PhoneMockupv2";
 const screens = [
   {
-    title: "Welcome to know[ledge]",
-    image: "/new-screens/screen1.jpeg",
+    title: "Home",
+    image: "/screens-v2/know-home.png",
     bg: "from-blue-500 to-purple-500",
     content: "Discover a world of knowledge at your fingertips.",
   },
   {
-    title: "Explore Topics",
-    image: "/new-screens/screen2.jpeg",
+    title: "Story",
+    image: "/screens-v2/know-story1.png",
     bg: "from-purple-500 to-pink-500",
     content: "Dive into a wide range of topics and expand your horizons.",
   },
   {
-    title: "Engage with Content",
-    image: "/new-screens/screen3.jpeg",
+    title: "Story Details",
+    image: "/screens-v2/know-story2.png",
     bg: "from-pink-500 to-red-500",
     content: "Interact with articles, videos, and more.",
   },
   {
-    title: "Community Insights",
-    image: "/new-screens/screen4.jpg",
-    bg: "from-orange-500 to-red-500",
+    title: "End of Story",
+    image: "/screens-v2/know-eop1.png",
+    bg: "from-red-500 to-orange-500",
   },
   {
-    title: "Interactive Stories",
-    image: "/new-screens/screen5.jpeg",
-    bg: "from-red-500 to-pink-500",
+    title: "Quiz Game",
+    image: "/screens-v2/know-game1.png",
+    bg: "from-orange-500 to-yellow-500",
   },
   {
-    title: "Knowledge Hub",
-    image: "/new-screens/screen6.jpg",
-    bg: "from-pink-500 to-purple-500",
+    title: "Game Progress",
+    image: "/screens-v2/know-game2.png",
+    bg: "from-yellow-500 to-green-500",
+  },
+  {
+    title: "Game Challenge",
+    image: "/screens-v2/know-game3.png",
+    bg: "from-green-500 to-teal-500",
+  },
+  {
+    title: "Game Results",
+    image: "/screens-v2/know-game4.png",
+    bg: "from-teal-500 to-cyan-500",
+  },
+  {
+    title: "Community",
+    image: "/screens-v2/know-community.PNG",
+    bg: "from-cyan-500 to-blue-500",
+  },
+  {
+    title: "Bookmarks",
+    image: "/screens-v2/know-bookmark.png",
+    bg: "from-blue-500 to-purple-500",
   },
 ];
 export const Hero = () => {
