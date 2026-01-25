@@ -67,7 +67,7 @@ export const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setScreenIndex((prev) => (prev + 1) % screens.length);
-    }, 3000); // Change every 3 seconds
+    }, 4000); // Change every 4 seconds
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {

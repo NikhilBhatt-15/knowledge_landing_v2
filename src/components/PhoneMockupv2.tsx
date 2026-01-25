@@ -46,7 +46,7 @@ export const PhoneMockupv2 = ({
       timeoutRef.current = setTimeout(() => {
         setShowPrev(false);
         setPrevIndex(screenIndex);
-      }, 600);
+      }, 1200);
     }
   }, [screenIndex, prevIndex]);
 
@@ -81,9 +81,13 @@ export const PhoneMockupv2 = ({
               animate={{
                 opacity: 0,
                 scale: 1.02,
-                x: -lastDirection.current * 40,
+                x: -lastDirection.current * 20,
               }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.25, 0.1, 0.25, 1],
+                opacity: { duration: 0.9 }
+              }}
               className="absolute inset-0"
               style={{ willChange: "opacity, transform" }}
             >
@@ -103,10 +107,14 @@ export const PhoneMockupv2 = ({
             initial={
               firstRender.current
                 ? { opacity: 1, scale: 1, x: 0 }
-                : { opacity: 0, scale: 0.98, x: lastDirection.current * 40 }
+                : { opacity: 0, scale: 0.98, x: lastDirection.current * 20 }
             }
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ 
+              duration: 1.2, 
+              ease: [0.25, 0.1, 0.25, 1],
+              opacity: { duration: 1, delay: 0.2 }
+            }}
             className="absolute inset-0"
             style={{ willChange: "opacity, transform" }}
           >
